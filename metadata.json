@@ -1,0 +1,5 @@
+{
+  "name": "Simulador de Exame de Faixa Preta Judô - CBJ",
+  "description": "Uma ferramenta completa para candidatos à faixa preta de Judô, com gerador de técnicas (Nage-waza, Katame-waza), cartões explicativos de 3 passos e simulador de testes teóricos baseado no Regulamento Nacional 2023 da CBJ.",
+  "requestFramePermissions": []
+}
