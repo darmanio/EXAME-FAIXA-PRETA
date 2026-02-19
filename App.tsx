@@ -5,9 +5,11 @@ import { TECHNIQUES, GRADUATION_REQUIREMENTS } from './constants';
 import { TechniqueCard } from './components/TechniqueCard';
 import { QuizModule } from './components/QuizModule';
 import { SenseiModule } from './components/SenseiModule';
+import { KataModule } from './components/KataModule';
+import { KataQuiz } from './components/KataQuiz';
 
 const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'practical' | 'theoretical' | 'sensei' | 'info'>('practical');
+  const [activeTab, setActiveTab] = useState<'practical' | 'theoretical' | 'sensei' | 'kata' | 'kataQuiz' | 'info'>('practical');
   const [selectedDan, setSelectedDan] = useState<GraduationType>(GraduationType.DAN_1);
   const [currentTechnique, setCurrentTechnique] = useState<Technique>(TECHNIQUES[0]);
 
@@ -59,24 +61,26 @@ const App: React.FC = () => {
 
         {/* Navigation Tabs */}
         <div className="container mx-auto px-4">
-          <nav className="flex space-x-1 overflow-x-auto no-scrollbar">
+          <nav className="flex space-x-1 overflow-x-auto no-scrollbar pb-2">
             {[
-              { id: 'practical', label: 'Prática Técnicas', icon: '🥋' },
-              { id: 'theoretical', label: 'Simulado Teórico', icon: '📚' },
-              { id: 'sensei', label: 'Dojo do Sensei', icon: '⛩️' },
+              { id: 'practical', label: 'Técnicas', icon: '🥋' },
+              { id: 'theoretical', label: 'Simulado', icon: '📚' },
+              { id: 'kata', label: 'Estudo Kata', icon: '🏮' },
+              { id: 'kataQuiz', label: 'Quiz Kata', icon: '❓' },
+              { id: 'sensei', label: 'Dojo Sensei', icon: '⛩️' },
               { id: 'info', label: 'Regulamento', icon: '📋' }
             ].map(tab => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`flex items-center space-x-3 px-8 py-5 font-bold rounded-t-2xl transition-all duration-300 border-b-4 flex-shrink-0 ${
+                className={`flex items-center space-x-3 px-6 py-4 font-bold rounded-t-2xl transition-all duration-300 border-b-4 flex-shrink-0 ${
                   activeTab === tab.id 
                     ? 'bg-slate-50 text-slate-950 border-red-600 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]' 
                     : 'text-slate-500 border-transparent hover:text-slate-200 hover:bg-white/5'
                 }`}
               >
-                <span className="text-xl">{tab.icon}</span>
-                <span className="uppercase tracking-wide text-xs">{tab.label}</span>
+                <span className="text-lg">{tab.icon}</span>
+                <span className="uppercase tracking-wide text-[10px]">{tab.label}</span>
               </button>
             ))}
           </nav>
@@ -111,6 +115,26 @@ const App: React.FC = () => {
                 <p className="text-slate-500 font-medium">Teste seus conhecimentos sobre o currículo teórico oficial.</p>
               </div>
               <QuizModule />
+            </div>
+          )}
+
+          {activeTab === 'kata' && (
+            <div className="animate-fade-in">
+              <div className="mb-6">
+                <h2 className="text-3xl font-black text-slate-900 uppercase">Treinamento de Kata</h2>
+                <p className="text-slate-500 font-medium">Visualize a sequência correta e os detalhes ritualísticos.</p>
+              </div>
+              <KataModule />
+            </div>
+          )}
+
+          {activeTab === 'kataQuiz' && (
+            <div className="animate-fade-in">
+              <div className="mb-6">
+                <h2 className="text-3xl font-black text-slate-900 uppercase">Simulado de Kata</h2>
+                <p className="text-slate-500 font-medium">Teste sua memória sobre sequências e nomes das formas.</p>
+              </div>
+              <KataQuiz />
             </div>
           )}
 

@@ -76,6 +76,67 @@ export const TECHNIQUES: Technique[] = [
   }
 ];
 
+export const KATA_SEQUENCES = [
+  {
+    name: "Nage-no-Kata (Formas de Arremesso)",
+    description: "O Kata fundamental para 1º Dan. Composto por 15 técnicas em 5 grupos.",
+    groups: [
+      {
+        title: "Te-Waza (Técnicas de Braço)",
+        techniques: ["Uki-otoshi", "Seoi-nage", "Kata-guruma"]
+      },
+      {
+        title: "Koshi-Waza (Técnicas de Quadril)",
+        techniques: ["Uki-goshi", "O-goshi", "Tsurikomi-goshi"]
+      },
+      {
+        title: "Ashi-Waza (Técnicas de Perna)",
+        techniques: ["Okuri-ashi-barai", "Sasae-tsurikomi-ashi", "Uchi-mata"]
+      },
+      {
+        title: "Ma-Sutemi-Waza (Sacrifício Traseiro)",
+        techniques: ["Tomoe-nage", "Ura-nage", "Sumi-gaeshi"]
+      },
+      {
+        title: "Yoko-Sutemi-Waza (Sacrifício Lateral)",
+        techniques: ["Yoko-gake", "Yoko-guruma", "Uki-waza"]
+      }
+    ],
+    ritual: "Início: Saudação (Rei) ao Shomen, depois entre parceiros (Tori e Uke). Caminhada em Ayumi-ashi até o centro. Distância de aproximadamente 5,5 metros entre eles."
+  }
+];
+
+export const KATA_QUIZ_QUESTIONS: TheoryQuestion[] = [
+  {
+    id: "kq1",
+    question: "Qual é a primeira técnica executada no Nage-no-Kata?",
+    options: ["Seoi-nage", "Uki-otoshi", "O-goshi", "Tomoe-nage"],
+    correctAnswer: 1,
+    explanation: "O Nage-no-Kata inicia com o grupo Te-Waza, e a primeira técnica é o Uki-otoshi."
+  },
+  {
+    id: "kq2",
+    question: "No Nage-no-Kata, em qual grupo se encontra a técnica Uchi-mata?",
+    options: ["Te-Waza", "Koshi-Waza", "Ashi-Waza", "Yoko-Sutemi-Waza"],
+    correctAnswer: 2,
+    explanation: "Uchi-mata é a terceira técnica do grupo Ashi-Waza (técnicas de perna)."
+  },
+  {
+    id: "kq3",
+    question: "Quantas técnicas compõem o Nage-no-Kata completo?",
+    options: ["10 técnicas", "12 técnicas", "15 técnicas", "20 técnicas"],
+    correctAnswer: 2,
+    explanation: "São 5 grupos de 3 técnicas cada, totalizando 15 técnicas executadas à direita e à esquerda (exceto algumas)."
+  },
+  {
+    id: "kq4",
+    question: "Qual técnica encerra o grupo de Koshi-Waza no Nage-no-Kata?",
+    options: ["Uki-goshi", "O-goshi", "Tsurikomi-goshi", "Harai-goshi"],
+    correctAnswer: 2,
+    explanation: "A sequência do Koshi-waza é: Uki-goshi, O-goshi e Tsurikomi-goshi."
+  }
+];
+
 export const THEORY_QUESTIONS: TheoryQuestion[] = [
   {
     id: "q1",
